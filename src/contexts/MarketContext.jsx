@@ -56,7 +56,10 @@ export const MarketProvider = ({ children }) => {
     fetchHoldings();
 
     const token = localStorage.getItem('token');
-    const socket = new WebSocket(`ws://localhost:5000/ws`, token);
+    const socket = new WebSocket(
+  `wss://${import.meta.env.VITE_API_BASE_URL ? 'https://backend-dxzl.onrender.com' : 'localhost:5000'}/ws`,
+  token
+);
 
     socket.onopen = () => console.log('✅ WebSocket connected');
     socket.onmessage = (event) => {
