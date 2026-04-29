@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://backend-dxzl.onrender.com/api',
+  withCredentials: false,
 });
 
 api.interceptors.request.use((config) => {
