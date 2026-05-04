@@ -27,8 +27,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            
-            {/* Защищённые страницы */}
+          
             <Route path="/" element={
               <ProtectedRoute>
                 <Dashboard />
