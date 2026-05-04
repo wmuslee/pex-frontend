@@ -7,7 +7,7 @@ export default function Market() {
   if (stocks.length === 0) {
     return (
       <div className="container" style={{ padding: '40px 20px', textAlign: 'center' }}>
-        <h1>Live Market 📈</h1>
+        <h1>Live Market</h1>
         <p>Пока никто не создал акции...</p>
       </div>
     );

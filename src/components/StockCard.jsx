@@ -11,7 +11,7 @@ export default function StockCard({ stock }) {
     setLoading(true);
     try {
       await buyStock(stock.ticker, parseInt(shares));
-      alert(`✅ Куплено ${shares} шт. ${stock.ticker}`);
+      alert(`Куплено ${shares} шт. ${stock.ticker}`);
       setShares(1);
     } catch (err) {
       alert(err.response?.data?.message || 'Ошибка покупки');

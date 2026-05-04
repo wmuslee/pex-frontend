@@ -22,7 +22,7 @@ export default function Navbar() {
             <Link to="/portfolio" style={{ color: 'white', textDecoration: 'none' }}>Portfolio</Link>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              💰 <strong>${(user?.walletBalance ?? 10000).toLocaleString()}</strong>
+               <strong>${(user?.walletBalance ?? 10000).toLocaleString()}</strong>
             </div>
 
             <span style={{ fontWeight: '600' }}>{user.username}</span>
