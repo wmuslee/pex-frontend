@@ -12,7 +12,6 @@ export default function Dashboard() {
   const [loadingCreate, setLoadingCreate] = useState(false);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
 
-  // Находим свою акцию
   const myStock = stocks.find(stock => 
     stock.owner?._id === user?.id || stock.owner === user?.id
   );
@@ -24,7 +23,7 @@ export default function Dashboard() {
     setLoadingCreate(true);
     try {
       await createStock(ticker, Number(initialPrice));
-      alert(`✅ Акция ${ticker.toUpperCase()} успешно создана!`);
+      alert(`Акция ${ticker.toUpperCase()} успешно создана!`);
       setTicker('');
       setInitialPrice(50);
     } catch (err) {
@@ -41,8 +40,8 @@ export default function Dashboard() {
     setLoadingUpdate(true);
     try {
       await updatePrice(myStock.ticker, Number(newPrice));
-      alert(`✅ Цена акции ${myStock.ticker} обновлена до $${newPrice}`);
-      setNewPrice(Number(newPrice)); // сохраняем новое значение
+      alert(`Цена акции ${myStock.ticker} обновлена до $${newPrice}`);
+      setNewPrice(Number(newPrice)); 
     } catch (err) {
       alert(err.response?.data?.message || 'Ошибка обновления цены');
     } finally {
@@ -60,7 +59,6 @@ export default function Dashboard() {
       </p>
 
       {!myStock ? (
-        /* === ФОРМА СОЗДАНИЯ АКЦИИ === */
         <div className="card" style={{ maxWidth: '600px' }}>
           <h2 style={{ marginBottom: '24px' }}>Create your company stock</h2>
           
@@ -92,7 +90,6 @@ export default function Dashboard() {
           </form>
         </div>
       ) : (
-        /* === УПРАВЛЕНИЕ СВОЕЙ АКЦИЕЙ === */
         <div className="card" style={{ maxWidth: '600px' }}>
           <h2 style={{ marginBottom: '16px' }}>
             Your Stock: <strong>{myStock.ticker}</strong>
@@ -126,7 +123,7 @@ export default function Dashboard() {
           </form>
 
           <p style={{ marginTop: '16px', fontSize: '14px', color: '#10b981' }}>
-            ✅ Only you can change this price. All users will see the update instantly.
+            Only you can change this price. All users will see the update instantly.
           </p>
         </div>
       )}

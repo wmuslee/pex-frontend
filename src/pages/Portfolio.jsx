@@ -20,7 +20,6 @@ export default function Portfolio() {
         Welcome, {user?.username}!
       </p>
 
-      {/* Net Worth Card */}
       <div className="card" style={{ maxWidth: '600px', marginBottom: '50px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>

@@ -53,7 +53,6 @@ function App() {
               </ProtectedRoute>
             } />
 
-            {/* Если человек зашёл куда-то не туда — кидаем на дашборд */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </MarketProvider>

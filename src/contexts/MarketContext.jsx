@@ -29,7 +29,7 @@ export const MarketProvider = ({ children }) => {
 
   const buyStock = async (ticker, shares) => {
     const res = await api.post('/trade/buy', { ticker, shares });
-    updateWallet(res.data.newBalance);           // обновляем кошелёк
+    updateWallet(res.data.newBalance);          
     await Promise.all([fetchStocks(), fetchHoldings()]);
     return res.data;
   };
