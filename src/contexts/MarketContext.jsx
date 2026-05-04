@@ -68,6 +68,9 @@ export const MarketProvider = ({ children }) => {
             : stock
         ));
       }
+      if (data.type === "NEW_STOCK") {
+        setStocks(prev => [...prev, data.payload]);
+      }
     };
 
     return () => socket.close();
